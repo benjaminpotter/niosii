@@ -1,5 +1,5 @@
+use niosii::ElfProgram;
 use niosii::Nios2DE0;
-use niosii::Program;
 
 fn main() {
     // Read a .s file with source code
@@ -7,7 +7,7 @@ fn main() {
     // Might want to compile the source code into an ELF format before
 
     let bytes = std::fs::read("resources/loop.elf").unwrap();
-    let _prog = Program::from_elf(bytes.as_slice());
+    let _prog = ElfProgram::from_bytes(bytes.as_slice());
 
     // Memory unit that acts as the RAM for the device
 
